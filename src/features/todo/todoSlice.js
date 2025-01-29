@@ -13,8 +13,16 @@ export const todoSlice = createSlice({
             state.todos.push(todo)
         },
         removeTodo: (state, action) => {
-            state.todos.filter((todo) => todo.id !== action.payload)
+            console.log("removed", action.payload)
+            state.todos = state.todos.filter((todo) => todo.id !== action.payload)
         },
+        updateTodo: (state, action) => {
+            const { id, text } = action.payload
+            const todoIndex = state.todos.findIndex((todo) => todo.id == id)
+            if (todoIndex !== -1) {
+                state.todos[todoIndex].text = text
+            }
+        }
         // updateTodo: (state, action) => {
         //     const todoIndex = state.todos.findIndex((todo) => todo.id == action.payload)
         //     if(todoIndex !== -1){
@@ -26,6 +34,6 @@ export const todoSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addTodo, removeTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, updateTodo } = todoSlice.actions;
 
 export default todoSlice.reducer; 

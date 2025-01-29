@@ -40,3 +40,39 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/* styling for todo */
+
+.inputField{
+  width: 40vw;
+  height: 40px;
+  /* outline: none;
+  border: none; */
+  background-color: #fff;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.btn{
+  margin: 10px;
+}
+
+.todoDiv{
+  display: inline-block;
+  /* display:inline; */
+  width: 40vw;
+  height: 40px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.liHolder{
+  display: flex;
+  align-items: center;
+}
